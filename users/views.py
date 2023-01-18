@@ -40,12 +40,6 @@ class UserProfileView(DetailView):
     context_object_name = "user"
 
 
-# class UpdateProfileView(UpdateView):
-#     model = User
-#     form_class = UpdateProfileForm
-#     template_name = "users/update_profile.html"
-#     context_object_name = "user"
-
 def show_user_profile(request, pk):
     user = get_object_or_404(User.objects.select_related("profile"), pk=pk)
     context = {
