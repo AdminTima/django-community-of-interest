@@ -1,0 +1,28 @@
+
+
+
+<nav class="navbar">
+    <ul class="navbar__list">
+    {% if request.user.is_authenticated %}
+        <li class="navbar__list-item">
+            <a href="{% url "index" %}" class="navbar__link">Main</a>
+        </li>
+        <li class="navbar__list-item">
+            <a href="{% url "create_room" %}" class="navbar__link">Create room</a>
+        </li>
+        <li class="navbar__list-item">
+            <a href="{% url "users:logout" %}" class="navbar__link">Logout</a>
+        </li>
+        <li class="navbar__list-item">
+            <a href="{% url "users:profile" request.user.id %}" class="navbar__link">Profile</a>
+        </li>
+    {% else %}
+        <li class="navbar__list-item">
+            <a href="{% url "users:register" %}" class="navbar__link">Register</a>
+        </li>
+        <li class="navbar__list-item">
+            <a href="{% url "users:login" %}" class="navbar__link">Login</a>
+        </li>
+    {% endif %}
+    </ul>
+</nav>

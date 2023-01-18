@@ -1,0 +1,21 @@
+
+
+<div class="rooms-list">
+    <p class="rooms-list__rooms-amount">Rooms amount: {{ rooms.count }}</p>
+<ul class="rooms-list__list">
+    {% for room in rooms %}
+        <li class="rooms-list__item">
+            Creator: <a href="{% url 'users:profile' room.user.id %}">{{ room.user }}</a>
+            <h3 class="rooms-list__room-name">{{ room.name }}</h3>
+            <span>Topic: {{ room.topic }}</span>
+            <div class="rooms-list__links">
+                {% if room.user == request.user %}
+                    <a class="rooms-list__link" href="{% url "update_room" room.id %}">Update</a>
+                    <a class="rooms-list__link" href="{% url "delete_room" room.id %}">Delete</a>
+                {% endif %}
+                <a class="rooms-list__link" href="{% url 'room' room.pk %}">Detail</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+</div>

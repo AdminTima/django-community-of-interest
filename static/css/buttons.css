@@ -1,0 +1,26 @@
+.btn {
+    padding: 6px 12px;
+    font-size: 17px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+
+.btn_success {
+    border: 2px solid blue;
+    background-color: #21f45c;
+}
+
+
+.btn_danger {
+    background-color: #f00443;
+    border: 2px solid black;
+}
+
+.btn_primary {
+    border: 3px solid teal;
+    background-color: aqua;
+}
+

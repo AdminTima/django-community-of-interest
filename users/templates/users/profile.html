@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block content %}
+    <div class="profile-page">
+        {% if user.profile.photo %}
+            <img
+                src="{{ user.profile.photo.url }}"
+                alt="user photo"
+                class="profile-page__image"
+            >
+        {% endif %}
+
+        <h1>{{ user.username }}</h1>
+        <h3>{{ user.profile.bio }}</h3>
+        {% if request.user.id == user.id %}
+            <a class="btn btn_primary" href="{% url 'users:update_profile' %}">Update profile</a>
+        {% endif %}
+        {% include "communication/rooms_list.html" with rooms=user.room_set.all %}
+    </div>
+
+{% endblock %}

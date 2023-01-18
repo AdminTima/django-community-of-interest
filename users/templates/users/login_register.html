@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    {% if is_register_page %}
+        Register
+    {% else %}
+        Login
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="login_register_page">
+            {% if is_register_page %}
+        <h1>Register</h1>
+    {% else %}
+        <h1>Login</h1>
+    {% endif %}
+    <style>
+        .form_inp {
+            border: 3px solid deeppink;
+        }
+    </style>
+    <form action="" method="post" class="login_register_form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn_success">Submit</button>
+    </form>
+    </div>
+{% endblock %}

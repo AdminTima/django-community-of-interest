@@ -1,0 +1,13 @@
+.env
+.idea/
+.idea_modules/
+__pycache__/
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+venv/
+db.sqlite3
+media
+*.py[cod]
+*$py.class

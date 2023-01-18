@@ -1,0 +1,184 @@
+@import "navbar.css";
+@import "topics.css";
+@import "rooms-list.css";
+@import "buttons.css";
+
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green-color: #7EF97EFF;
+}
+
+body {
+    background: linear-gradient(lightblue, lightgreen, #59f4bb) no-repeat;
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.form {
+    margin: 20px 0;
+}
+
+.user-preview {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid;
+    padding: 10px;
+    column-gap: 7px;
+}
+
+
+.back-link {
+    border: 2px solid orangered;
+    padding: 6px 12px;
+    border-radius: 10px;
+    color: teal;
+}
+
+.index__page {
+    display: flex;
+}
+
+.index__page .sidebar {
+    flex: 4;
+}
+
+.index__page .index__rooms {
+    flex: 8;
+}
+
+.container {
+    padding: 100px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}
+
+a:visited {
+    color: darkblue;
+}
+
+.messages-list__item {
+    font-size: 23px;
+    border: 2px solid;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.messages-list__user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.messages-list__message-text {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.messages-list__message-sent {
+    font-size: 18px;
+    font-style: italic;
+    color: black;
+}
+
+input[type="text"], input[type="password"], textarea {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-right: none;
+    border-left: none;
+    background-color: var(--green-color);
+    padding: 4px 6px;
+    font-size: 19px;
+    outline: none;
+    min-width: 30%;
+}
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-page__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 2px solid;
+}
+
+.profile-page__profile-info {
+    margin: 0 auto;
+}
+
+#id_photo {
+    font-size: 20px;
+}
+
+.login_register_page {
+    text-align: center;
+}
+
+.login_register_form label {
+    display: none;
+}
+
+.room-description {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.room-page__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-page__messages-list {
+    flex: 8;
+}
+
+.room-page__participants {
+    flex: 4;
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#id_topic {
+    padding: 3px 6px;
+    font-size: 18px;
+    background-color: var(--green-color);
+    border-right: 2px solid;
+    border-left: 2px solid;
+    border-top: none;
+    border-bottom: none;
+}
+
+.errorlist {
+    list-style-type: none;
+}
+
+.errorlist li {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+
+

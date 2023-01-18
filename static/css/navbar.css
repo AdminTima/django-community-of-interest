@@ -1,0 +1,21 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: cyan;
+    border-radius: 10px;
+}
+
+.navbar__list {
+    display: flex;
+    column-gap: 60px;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar__link {
+    font-size: 27px;
+}

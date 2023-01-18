@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Main{% endblock %}
+
+
+{% block content %}
+    <div class="index__page">
+        <div class="sidebar">
+            <form class="rooms-search-form" action="">
+                <input type="text" placeholder="Search rooms..." name="q">
+                <button class="btn btn_primary">Search</button>
+            </form>
+        <h2>Topics: </h2>
+        <ul class="topics-list">
+            <li class="topics-list__item">
+                <a class="topics-list__link" href="{% url 'index' %}">All</a>
+            </li>
+            {% for topic in topics %}
+                <li class="topics-list__item">
+                    <a class="topics-list__link" href="{% url 'index' %}?q={{ topic.name }}">
+                        {{ topic.name }}
+                    </a>
+                </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="index__rooms">
+            {% include "communication/rooms_list.html" with rooms=rooms %}
+    </div>
+    </div>
+
+{% endblock %}

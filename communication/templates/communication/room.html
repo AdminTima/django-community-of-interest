@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    {{ room.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="room-page">
+        <h1>{{ room.name }}</h1>
+        <p class="room-description">
+            {{ room.description }}
+        </p>
+        <div class="room-page__content">
+            <ul class="room-page__messages-list">
+                {% for message in room.message_set.all %}
+                    <li class="messages-list__item">
+                        <div class="user-preview">
+                            <a class="messages-list__link"
+                               href="{% url 'users:profile' message.user.id %}">{{ message.user }}
+                            </a>
+                            <img
+                                    class="messages-list__user-img"
+                                    src="{{ message.user.profile.photo.url }}"
+                                    alt=""
+                            >
+                        </div>
+                        <p
+                                class="messages-list__message-text"
+                        >
+                            {{ message.content }}
+                        </p>
+                        <p class="messages-list__message-sent">
+                            Sent: {{ message.created | timesince }} ago
+                        </p>
+                        {% if request.user == message.user %}
+                            <a
+                                    href="{% url 'delete_message' message.id %}"
+                                    class="btn btn_danger"
+                            >
+                                Delete
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="room-page__participants">
+                <h2>Participants:</h2>
+                <ul class="room-page__participants-list">
+                    {% for participant in room.participants.all %}
+                        <li>
+                            <div class="user-preview">
+                                <a class="messages-list__link"
+                                   href="{% url 'users:profile' participant.id %}">{{ participant.username }}
+                                </a>
+                                <img
+                                        class="messages-list__user-img"
+                                        src="{{ participant.profile.photo.url }}"
+                                        alt=""
+                                >
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="message_content" placeholder="Your message...">
+            <button class="btn btn_success">Send</button>
+        </form>
+    </div>
+
+{% endblock %}

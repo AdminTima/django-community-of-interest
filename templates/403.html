@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Forbidden
+{% endblock %}
+
+{% block content %}
+    <h1>403 Forbidden</h1>
+    <h2>You have no permissions for performing this action! :(</h2>
+    <a href="{{ request.META.HTTP_REFERER }}">Back</a>
+{% endblock %}
+

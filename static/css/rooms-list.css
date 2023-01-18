@@ -1,0 +1,46 @@
+.rooms-list {
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.rooms-list__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.rooms-list__room-name {
+    font-size: 22px;
+}
+
+.rooms-list__links {
+    border-top: 1px solid;
+    margin: 6px 4px;
+    padding-top: 5px;
+}
+
+.rooms-list__link {
+    border: 2px solid darkcyan;
+    padding: 4px 8px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 7px;
+    display: block;
+    margin: 5px;
+}
+
+.rooms-list__rooms-amount {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.rooms-list__item  {
+    border-right: 2px solid;
+    border-left: 2px solid;
+    border-radius: 10px;
+    width: 30%;
+    margin: 10px;
+    padding: 5px;
+}

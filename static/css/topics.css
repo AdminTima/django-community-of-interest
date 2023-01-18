@@ -1,0 +1,13 @@
+.topics-list {
+    list-style-type: none;
+}
+
+.topics-list__item {
+    margin-bottom: 10px;
+}
+
+.topics-list__item:before {
+    content: "🔥";
+    display: inline-block;
+    margin-right: 5px;
+}
